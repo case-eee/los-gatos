@@ -3,17 +3,20 @@ class Admin::CatsController < ApplicationController
   before_filter :require_login
 
   def index
-    # this method will welcome a user after they've signed it
-    # it will show a list of all the cats in a random order
     @cats = Cat.all
   end
 
   def new
-    # this will render a form to create a new cat
+    @cat = Cat.new
   end
 
   def create
-    # this will do the creation of a new cat
+    @cat = Cat.new(cat_params)
+    if @cat.save
+      redirect_to admin_cats_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -32,7 +35,7 @@ class Admin::CatsController < ApplicationController
   private
 
   def cat_params
-
+    params.require(:cat).permit(:url, :description)
   end
 
   def require_login

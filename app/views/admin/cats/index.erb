@@ -1,8 +1,11 @@
 
 <h3>Welcome to the "ZOMG! CAT HEALTH!" Admin Homepage</h3>
 
-<% @cats.each do |cat| %>
-  <%= image_tag cat.url %>
-  <h1><%= cat.description %></h1>
-<% end %>
+<%=  link_to("Create a new Cat!", new_admin_cat_path) %>
 
+<div class="cats">
+  <% @cats.each do |cat| %>
+    <%= image_tag cat.url %>
+    <h1><%= cat.description %></h1>
+  <% end %>
+</div>
