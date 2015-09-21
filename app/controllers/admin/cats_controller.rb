@@ -19,8 +19,14 @@ class Admin::CatsController < ApplicationController
     end
   end
 
+  def show
+    @cat = Cat.find_by(id: params[:id])
+  end
+
   def destroy
-    # delete that cat
+    cat = Cat.find_by(id: params[:id])
+    cat.destroy
+    redirect_to admin_cats_path
   end
 
   def edit

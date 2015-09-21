@@ -1,0 +1,8 @@
+
+<div class="cat-show">
+  <%= image_tag(@cat.url) %>
+  <h1><%= @cat.description %></h1>
+</div>
+
+<%= button_to "Edit Cat Info", edit_admin_cat_path %>
+<%= button_to "Delete this Cat", admin_cat_path, :method => :delete %>

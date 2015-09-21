@@ -5,7 +5,7 @@
 
 <div class="cats">
   <% @cats.each do |cat| %>
-    <%= image_tag cat.url %>
+    <%= link_to(image_tag(cat.url), admin_cat_path(cat)) %>
     <h1><%= cat.description %></h1>
   <% end %>
 </div>
