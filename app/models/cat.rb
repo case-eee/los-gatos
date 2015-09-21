@@ -3,5 +3,9 @@ class Cat < ActiveRecord::Base
 
   validates_presence_of :url, :description
 
+  def self.generate_random
+    all.sample(2)
+  end
+
 end
 
