@@ -1,7 +1,6 @@
+<h3>Edit your Cat</h3>
 
-<h3>Create your Cat</h3>
-
-<%= form_for @cat, url: :admin_cats do |f| %>
+<%= form_for @cat, :url => admin_cat_path do |f| %>
   <%= f.label :url %>
   <%= f.text_field :url %>
 

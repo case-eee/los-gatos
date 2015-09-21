@@ -10,6 +10,7 @@ class Admin::CatsController < ApplicationController
     @cat = Cat.new
   end
 
+
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
@@ -30,13 +31,19 @@ class Admin::CatsController < ApplicationController
   end
 
   def edit
-    # this will render the edit form
+    @cat = Cat.find_by(id: params[:id])
   end
 
   def update
-    # this will do the actual updating, find the cat then update it
-  end
+    @cat = Cat.find_by(id: params[:id])
+    @cat.update(cat_params)
 
+    if @cat.valid?
+      redirect_to admin_cats_path
+    else
+      render :edit
+    end
+  end
 
   private
 
