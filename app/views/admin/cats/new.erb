@@ -1,0 +1,9 @@
+<%= form_for @cat, url: :admin_cats do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+<% end %>
