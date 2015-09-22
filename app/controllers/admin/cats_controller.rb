@@ -3,7 +3,19 @@ class Admin::CatsController < ApplicationController
   before_filter :require_login
 
   def index
-    @cats = Cat.all
+    # @cats = Cat.all
+    if params["sort"] == "amazing"
+      @cats = Cat.sort_by_amazing
+    elsif params["sort"] == "cute"
+      @cats = Cat.sort_by_cute
+    else
+      @cats = Cat.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @cats.as_csv }
+    end
   end
 
   def new
@@ -22,11 +34,15 @@ class Admin::CatsController < ApplicationController
 
   def show
     @cat = Cat.find_by(id: params[:id])
+    # respond_to do |format|
+    #   format.html
+    #   format.csv { send_data @cat.votes.as_csv }
+    # end
   end
 
   def destroy
-    cat = Cat.find_by(id: params[:id])
-    cat.destroy
+    @cat = Cat.find_by(id: params[:id])
+    @cat.destroy
     redirect_to admin_cats_path
   end
 
