@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 4%;
+  font-family: "Helvetica";
+}
+
+h1 {
+  color: gray;
+}
+
+.vote-cat {
+  padding: 3%;
+  display: inline-block;
+}
