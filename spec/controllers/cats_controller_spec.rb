@@ -153,7 +153,6 @@ RSpec.describe Admin::CatsController, :type => :controller do
     end
   end
 
-
   describe "GET #edit" do
     before :each do
       allow(controller).to receive(:require_login)
