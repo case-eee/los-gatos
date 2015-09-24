@@ -1,10 +1,9 @@
 module Cats::Votes::VoteHelper
-  def zomg_button(cat)
-    cats_votes_path(id: cat.id, category: 'Zomg')
+  def cute_button(cat)
+    cats_create_cute_path(id: cat.id)
   end
 
-
   def amazing_button(cat)
-    cats_votes_path(id: cat.id, category: 'Amazing')
+    cats_create_amazing_path(id: cat.id)
   end
 end

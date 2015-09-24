@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   end
 
   namespace :cats do
-    resources :votes, only: [:index, :create]
+    resources :votes, only: [:index]
+    post "votes/create_amazing", to: "votes#create_amazing", as: :create_amazing
+    post "votes/create_cute", to: "votes#create_cute", as: :create_cute
   end
 end
