@@ -10,10 +10,19 @@ class Admin::CatsController < ApplicationController
     else
       @cats = Cat.all
     end
+  end
 
+  def cute_votes
     respond_to do |format|
-      format.html
-      format.csv { send_data @cats.as_csv }
+      # format.html
+      format.csv { send_data Cat.all.as_csv("ZOMG! Cute!"), :filename => 'cat_cute_votes.csv' }
+    end
+  end
+
+  def amazing_votes
+    respond_to do |format|
+      # format.html
+      format.csv { send_data Cat.all.as_csv("Amazing! So Beautiful!"), :filename => 'cat_amazing_votes.csv' }
     end
   end
 
