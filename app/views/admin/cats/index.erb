@@ -1,11 +1,28 @@
+<!-- <div class="logout"> -->
+<%= button_to("Logout", admin_logout_path, method: "delete", class: "btn btn-default logout") %>
+<!-- </div> -->
 
-<h3>Welcome to the "ZOMG! CAT HEALTH!" Admin Homepage</h3>
+<h1 class="greeting">Welcome to the "ZOMG! CAT HEALTH!" Admin Homepage</h1>
 
-<%=  link_to("Create a new Cat!", new_admin_cat_path) %>
+<div class="sort-by-links">
+  <div class="cute">
+    <%= link_to("Top Cute Cats", "/admin/cats/?sort=cute", class: "btn btn-primary btn-lg top") %>
+    <%= link_to("Export Cuteness Votes", admin_cute_votes_path(format: :csv), class: "export") %>
+  </div>
+  <div class="amazing">
+    <%= link_to("Top Amazing Cats", "/admin/cats/?sort=amazing", class: "btn btn-primary btn-lg top") %>
+    <%= link_to("Export Amazing Votes", admin_amazing_votes_path(format: :csv), class: "export")%>
+  </div>
+</div>
+
 
 <div class="cats">
   <% @cats.each do |cat| %>
-    <%= link_to(image_tag(cat.url), admin_cat_path(cat)) %>
-    <h1><%= cat.description %></h1>
+    <div class="cat">
+      <%= link_to(image_tag(cat.url, class: "img-rounded"), admin_cat_path(cat)) %>
+      <h3 class="description"><%= cat.description %></h3>
+    </div>
   <% end %>
 </div>
+
+<%= link_to("Create a new Cat!", new_admin_cat_path, class: "btn btn-primary btn-lg new-cat") %>

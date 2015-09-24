@@ -1,12 +1,15 @@
+<div class="create-cat">
+  <h3>Create your Cat</h3>
 
-<h3>Create your Cat</h3>
-
-<%= form_for @cat, url: :admin_cats do |f| %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.submit %>
-<% end %>
+  <%= form_for @cat, url: :admin_cats do |f| %>
+    <div class="url-label">
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+    <div class="description-label">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <%= f.submit :class => "btn btn-primary" %>
+  <% end %>
+</div>
