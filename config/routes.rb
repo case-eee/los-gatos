@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :cats
     get "login", to: "sessions#login", as: :login
+    delete "logout", to: "sessions#logout", as: :logout
     post "sessions", to: "sessions#create", as: :sessions
   end
 

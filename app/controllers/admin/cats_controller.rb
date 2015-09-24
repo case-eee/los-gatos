@@ -3,7 +3,6 @@ class Admin::CatsController < ApplicationController
   before_filter :require_login
 
   def index
-    # @cats = Cat.all
     if params["sort"] == "amazing"
       @cats = Cat.sort_by_amazing
     elsif params["sort"] == "cute"
@@ -22,7 +21,6 @@ class Admin::CatsController < ApplicationController
     @cat = Cat.new
   end
 
-
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
@@ -34,10 +32,6 @@ class Admin::CatsController < ApplicationController
 
   def show
     @cat = Cat.find_by(id: params[:id])
-    # respond_to do |format|
-    #   format.html
-    #   format.csv { send_data @cat.votes.as_csv }
-    # end
   end
 
   def destroy
