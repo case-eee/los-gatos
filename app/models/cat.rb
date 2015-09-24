@@ -23,18 +23,14 @@ class Cat < ActiveRecord::Base
     all.sort_by(&:cute_count).reverse
   end
 
-  # def sort(category)
-  #   all.sort { |x,y| x.category <=> y.category }.reverse
-  # end
-
   def self.as_csv(vote_type)
     CSV.generate do |csv|
-      csv << ["Cat Url", "IP Address", "Vote Type", "Cute Count", "Amazing Count"]
+      csv << ["Cat Url", "IP Address", "Vote Type"]
       if vote_type == "ZOMG! Cute!"
         all.sort_by_cute.each do |item|
           item.votes.each do |vote|
             if vote.category == vote_type
-              csv << [item.url, vote.IP_Address, vote.category, item.cute_count, item.amazing_count]
+              csv << [item.url, vote.IP_Address, vote.category]
             end
           end
         end
@@ -42,16 +38,12 @@ class Cat < ActiveRecord::Base
         all.sort_by_amazing.each do |item|
           item.votes.each do |vote|
             if vote.category == vote_type
-              csv << [item.url, vote.IP_Address, vote.category, item.cute_count, item.amazing_count]
+              csv << [item.url, vote.IP_Address, vote.category]
             end
           end
         end
       end
     end
-  end
-
-  def create_vote(type, ip_address)
-    votes.create(category: type, IP_Address: ip_address)
   end
 end
 
