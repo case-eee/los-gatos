@@ -1,6 +1,13 @@
-<h1>"ZOMG! CAT HEALTH!"</h1>
+<h1 class="greeting">"ZOMG! CAT HEALTH!"</h1>
 
-<%= image_tag @cats.first.url %>
-<%= button_to "ZOMG! So Cute!", zomg_button(@cats.first) %>
-<%= image_tag @cats.last.url %>
-<%= button_to "Amazing! So Beautiful!", amazing_button(@cats.last) %>
+<div class="voting">
+  <div class="vote-cat">
+    <%= image_tag @cats.first.url, class: "img-vote img-rounded" %>
+    <%= button_to "ZOMG! So Cute!", zomg_button(@cats.first), class: "btn btn-primary vote" %>
+  </div>
+
+  <div class="vote-cat">
+    <%= image_tag @cats.last.url, class: "img-vote img-rounded" %>
+    <%= button_to "Amazing! So Beautiful!", amazing_button(@cats.last), class: "btn btn-primary vote" %>
+  </div>
+</div>

@@ -24,11 +24,73 @@ h1 {
   color: gray;
 }
 
+.login {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5em;
+  margin-right: 5em;
+}
+
+input[type="submit"] {
+  margin-top: 3%;
+}
+
+.voting {
+  text-align: center;
+}
+
 .vote-cat {
-  padding: 3%;
+  padding: 5%;
   display: inline-block;
+  text-align: center;
+}
+
+.img-vote {
+  padding-bottom: 4%;
+}
+
+.vote {
+  margin-left: auto;
+  margin-right: auto;
+  width: 15em;
+  text-align: center;
+}
+
+.cat {
+  padding-top: 3%;
+}
+
+.description {
+  width: 30%;
+  text-align: center;
+}
+
+.top {
+  width: 25%;
+  display: block;
+  text-align: center;
+  margin: 2em auto 0 auto;
+}
+
+.sort-by-links {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
+  text-align: center;
 }
 
 .new-cat {
-  float: right;
+  text-align: center;
+}
+
+.greeting {
+  text-align: center;
+  padding: 0;
 }

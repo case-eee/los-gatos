@@ -1,15 +1,13 @@
-<h2>Hola</h2>
+<div class="login">
+  <h2>Hola, Please sign in here.</h2>
+  <%= form_for(:session, url: admin_sessions_path) do |f| %>
 
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control' %>
 
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
 
-
-<%= form_for(:session, url: admin_sessions_path) do |f| %>
-
-  <%= f.label :username %>
-  <%= f.text_field :username, class: 'form-control' %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.submit "Log in", class: "btn btn-primary" %>
-<% end %>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
+  <% end %>
+</div>
