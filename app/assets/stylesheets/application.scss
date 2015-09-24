@@ -20,10 +20,6 @@ body {
   font-family: "Helvetica";
 }
 
-h1 {
-  color: gray;
-}
-
 .login {
   width: 50%;
   text-align: center;
@@ -68,28 +64,47 @@ input[type="submit"] {
 }
 
 .description {
-  width: 40%;
-  display: inline-block;
+  display: block;
   padding-top: 0;
+  margin-left: 10px;
   margin-top: 0;
+}
+
+.cat-details {
+  width: 45%;
+  display: block;
+  float: right;
+  margin-left: 5%;
+}
+
+.cat-show img {
+  float: left;
+  width: 50%;
+  margin-top: 2.5%;
 }
 
 .cat-show {
   text-align: center;
   display: inline-block;
   padding-top: 0;
-  margin-top: 4%;
-}
-
-.cat-show h1 {
-  width: 40%;
-  margin-left: 30%;
+  margin: 0 auto;
 }
 
 .show-links {
   margin-top: 3%;
   text-align: center;
-  display: block;
+  width: 50%;
+  display: inline-block;
+}
+
+.edit {
+  float: left;
+  margin-top: 9px;
+  margin-right: 7px;
+}
+
+.delete {
+  float: right;
 }
 
 .top {

@@ -1,11 +1,13 @@
 <div class="cat-show">
   <%= image_tag(@cat.url) %>
-  <h1><%= @cat.description %></h1>
-  <h1>Amazing Vote Count: <%= @cat.amazing_count %></h1>
-  <h1>Cute Vote Count: <%= @cat.cute_count %></h1>
-</div>
+  <div class="cat-details">
+    <h1><%= @cat.description %></h1>
+    <h1>Amazing Vote Count: <%= @cat.amazing_count %></h1>
+    <h1>Cute Vote Count: <%= @cat.cute_count %></h1>
 
-<div class="show-links">
-  <%= link_to "Edit Cat Info", edit_admin_cat_path(@cat), class: "btn btn-primary btn-lg" %>
-  <%= button_to "Delete this Cat", admin_cat_path, :method => :delete, class: "btn btn-primary btn-lg" %>
+    <div class="show-links">
+      <%= link_to "Edit Cat Info", edit_admin_cat_path(@cat), class: "btn btn-primary btn-lg edit" %>
+      <%= button_to "Delete this Cat", admin_cat_path, :method => :delete, class: "btn btn-primary btn-lg delete" %>
+    </div>
+  </div>
 </div>
