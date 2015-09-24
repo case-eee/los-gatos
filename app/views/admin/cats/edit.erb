@@ -1,11 +1,16 @@
+<div class="edit-cat">
+
 <h3>Edit your Cat</h3>
 
 <%= form_for @cat, :url => admin_cat_path do |f| %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+  <div class="url-label">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="description-label">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
