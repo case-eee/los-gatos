@@ -2,6 +2,9 @@
 <div class="cat-show">
   <%= image_tag(@cat.url) %>
   <h1><%= @cat.description %></h1>
+  <h1>Amazing Count: <%= @cat.amazing_count %></h1>
+  <h1>Cute Count: <%= @cat.cute_count %></h1>
+
 </div>
 
 <%= link_to "Edit Cat Info", edit_admin_cat_path(@cat) %>
